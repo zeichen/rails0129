@@ -1,5 +1,8 @@
 class GroupsController < ApplicationController
+	before_action :authenticate_user!  
+	
 	def index
+		 flash[:notice] = "早安！你好！"
 		@groups=Group.all
 	end 
 	def new 
